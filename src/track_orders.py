@@ -20,7 +20,7 @@ class TrackOrders:
         for order in orders:
             if order[0] == customer:
                 cOrders.append(order[1])
-      
+
         return mode(cOrders)
 
     def get_never_ordered_per_customer(self, customer):
@@ -33,9 +33,8 @@ class TrackOrders:
         for dish in orders:
             if dish[1] not in cDishes:
                 neverOrderes.add(dish[1])
-        
-        return neverOrderes
 
+        return neverOrderes
 
     def get_days_never_visited_per_customer(self, customer):
         orders = self.orders
@@ -47,7 +46,7 @@ class TrackOrders:
         for day in orders:
             if day[2] not in cDays:
                 neverOrderes.add(day[2])
-        
+
         return neverOrderes
 
     def get_busiest_day(self):
@@ -55,7 +54,7 @@ class TrackOrders:
         days = self.customerOrders
         for day in orders:
             days.append(day[2])
-        
+
         return mode(days)
 
     def get_least_busy_day(self):
@@ -63,5 +62,5 @@ class TrackOrders:
         days = self.customerOrders
         for day in orders:
             days.append(day[2])
-        
+
         return Counter(days).most_common()[-1][0]
