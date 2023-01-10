@@ -13,7 +13,7 @@ def read_file(path_to_file):
                 orders.append(order)
         return orders
     except FileNotFoundError:
-        raise f"Extensão inválida: '{path_to_file}'"
+        raise ValueError(f"Extensão inválida: '{path_to_file}'")
 
 
 def most_requested_by_maria(orders):
